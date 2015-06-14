@@ -78,6 +78,22 @@ public class InputManager : MonoBehaviour
 		}
 	}
 
+	public float Left
+	{
+		get
+		{
+			return state.Triggers.Left;
+		}
+	}
+
+	public float Right
+	{
+		get
+		{
+			return state.Triggers.Right;
+		}
+	}
+
 	public float Horizontal
 	{
 		get
@@ -94,11 +110,19 @@ public class InputManager : MonoBehaviour
 		}
 	}
 
-	public float Jump
+	public bool JumpDown
 	{
 		get
 		{
-			return Convert.ToInt32( state.Buttons.A == ButtonState.Pressed);
+			return prevState.Buttons.A == ButtonState.Released && Jump;
+		}
+	}
+
+	public bool Jump
+	{
+		get
+		{
+			return state.Buttons.A == ButtonState.Pressed;
 		}
 	}
 
