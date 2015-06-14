@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour
 	
 	protected virtual void FixedUpdate()
 	{
-		float speed =  Mathf.Clamp01( Mathf.Abs(input.Horizontal) + Mathf.Abs(input.Vertical));
+		float speed =  Mathf.Clamp01( Mathf.Abs(input.LeftHorizontal) + Mathf.Abs(input.LeftHorizontal));
 		Vector3 direction = transform.TransformDirection(Vector3.forward);
 		float sideStep = input.Right - input.Left;
 
@@ -50,7 +50,7 @@ public class Movement : MonoBehaviour
 	
 	protected virtual void Update()
 	{
-		Vector3 moveDirection = new Vector3(input.Horizontal,0,input.Vertical);
+		Vector3 moveDirection = new Vector3(input.LeftHorizontal,0,input.LeftVertical);
 		if (moveDirection != Vector3.zero)
 		{
 			movement = Vector3.RotateTowards(movement, moveDirection, rotateSpeed * Mathf.Deg2Rad * Time.deltaTime, 1000); //Direction

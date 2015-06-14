@@ -94,7 +94,7 @@ public class InputManager : MonoBehaviour
 		}
 	}
 
-	public float Horizontal
+	public float LeftHorizontal
 	{
 		get
 		{
@@ -102,13 +102,31 @@ public class InputManager : MonoBehaviour
 		}
 	}
 
-	public float Vertical
+	public float LeftVertical
 	{
 		get
 		{
 			return Input.GetAxis("Vertical") + state.ThumbSticks.Left.Y;
 		}
 	}
+
+	public float RightHorizontal
+	{
+		get
+		{
+			return state.ThumbSticks.Right.X;
+		}
+	}
+	
+	public float RightVertical
+	{
+		get
+		{
+			return state.ThumbSticks.Right.Y;
+		}
+	}
+
+
 
 	public bool JumpDown
 	{
